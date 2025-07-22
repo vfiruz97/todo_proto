@@ -36,6 +36,11 @@ message ListTasksResponse {
     repeated Task tasks = 1;
 }
 
+message ErrorResponse {
+  string message = 1;
+  int32 code = 2;
+}
+
 // The Task service definition.
 service TaskService {
     rpc Create(CreateTaskRequest) returns (Task);

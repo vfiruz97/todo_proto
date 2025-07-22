@@ -437,6 +437,74 @@ class ListTasksResponse extends $pb.GeneratedMessage {
   $pb.PbList<Task> get tasks => $_getList(0);
 }
 
+class ErrorResponse extends $pb.GeneratedMessage {
+  factory ErrorResponse({
+    $core.String? message,
+    $core.int? code,
+  }) {
+    final result = create();
+    if (message != null) result.message = message;
+    if (code != null) result.code = code;
+    return result;
+  }
+
+  ErrorResponse._();
+
+  factory ErrorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ErrorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ErrorResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'todo'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ErrorResponse clone() => ErrorResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ErrorResponse copyWith(void Function(ErrorResponse) updates) =>
+      super.copyWith((message) => updates(message as ErrorResponse))
+          as ErrorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ErrorResponse create() => ErrorResponse._();
+  @$core.override
+  ErrorResponse createEmptyInstance() => create();
+  static $pb.PbList<ErrorResponse> createRepeated() =>
+      $pb.PbList<ErrorResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ErrorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ErrorResponse>(create);
+  static ErrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get message => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set message($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => $_clearField(2);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

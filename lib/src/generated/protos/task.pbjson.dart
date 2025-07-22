@@ -105,3 +105,17 @@ const ListTasksResponse$json = {
 /// Descriptor for `ListTasksResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listTasksResponseDescriptor = $convert.base64Decode(
     'ChFMaXN0VGFza3NSZXNwb25zZRIgCgV0YXNrcxgBIAMoCzIKLnRvZG8uVGFza1IFdGFza3M=');
+
+@$core.Deprecated('Use errorResponseDescriptor instead')
+const ErrorResponse$json = {
+  '1': 'ErrorResponse',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'code', '3': 2, '4': 1, '5': 5, '10': 'code'},
+  ],
+};
+
+/// Descriptor for `ErrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List errorResponseDescriptor = $convert.base64Decode(
+    'Cg1FcnJvclJlc3BvbnNlEhgKB21lc3NhZ2UYASABKAlSB21lc3NhZ2USEgoEY29kZRgCIAEoBV'
+    'IEY29kZQ==');
