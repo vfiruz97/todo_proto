@@ -15,8 +15,6 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/field_mask.pb.dart' as $2;
-
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class Task extends $pb.GeneratedMessage {
@@ -259,12 +257,16 @@ class GetTaskRequest extends $pb.GeneratedMessage {
 
 class UpdateTaskRequest extends $pb.GeneratedMessage {
   factory UpdateTaskRequest({
-    Task? task,
-    $2.FieldMask? updateMask,
+    $core.int? id,
+    $core.String? title,
+    $core.String? description,
+    $core.bool? isCompleted,
   }) {
     final result = create();
-    if (task != null) result.task = task;
-    if (updateMask != null) result.updateMask = updateMask;
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (isCompleted != null) result.isCompleted = isCompleted;
     return result;
   }
 
@@ -281,9 +283,10 @@ class UpdateTaskRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'UpdateTaskRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'todo'),
       createEmptyInstance: create)
-    ..aOM<Task>(1, _omitFieldNames ? '' : 'task', subBuilder: Task.create)
-    ..aOM<$2.FieldMask>(2, _omitFieldNames ? '' : 'updateMask',
-        subBuilder: $2.FieldMask.create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOB(4, _omitFieldNames ? '' : 'isCompleted')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -308,26 +311,40 @@ class UpdateTaskRequest extends $pb.GeneratedMessage {
   static UpdateTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Task get task => $_getN(0);
+  $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
-  set task(Task value) => $_setField(1, value);
+  set id($core.int value) => $_setSignedInt32(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasTask() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTask() => $_clearField(1);
-  @$pb.TagNumber(1)
-  Task ensureTask() => $_ensure(0);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $2.FieldMask get updateMask => $_getN(1);
+  $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set updateMask($2.FieldMask value) => $_setField(2, value);
+  set title($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasUpdateMask() => $_has(1);
+  $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUpdateMask() => $_clearField(2);
-  @$pb.TagNumber(2)
-  $2.FieldMask ensureUpdateMask() => $_ensure(1);
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get isCompleted => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isCompleted($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIsCompleted() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsCompleted() => $_clearField(4);
 }
 
 class DeleteTaskRequest extends $pb.GeneratedMessage {

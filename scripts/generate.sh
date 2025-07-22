@@ -46,7 +46,7 @@ mkdir -p lib/src/generated
 # Generate the Google protobuf standard types first
 echo "Generating Google protobuf standard types..."
 protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --dart_out=lib/src/generated "$PROTOBUF_INCLUDE_DIR/google/protobuf/empty.proto"
-protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --dart_out=lib/src/generated "$PROTOBUF_INCLUDE_DIR/google/protobuf/field_mask.proto"
+# Add any other standard types you need here
 
 echo "Generating Dart files..."
 protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --proto_path=. --dart_out=grpc:lib/src/generated protos/task.proto

@@ -64,23 +64,18 @@ final $typed_data.Uint8List getTaskRequestDescriptor =
 const UpdateTaskRequest$json = {
   '1': 'UpdateTaskRequest',
   '2': [
-    {'1': 'task', '3': 1, '4': 1, '5': 11, '6': '.todo.Task', '10': 'task'},
-    {
-      '1': 'update_mask',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.FieldMask',
-      '10': 'updateMask'
-    },
+    {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'is_completed', '3': 4, '4': 1, '5': 8, '10': 'isCompleted'},
   ],
 };
 
 /// Descriptor for `UpdateTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateTaskRequestDescriptor = $convert.base64Decode(
-    'ChFVcGRhdGVUYXNrUmVxdWVzdBIeCgR0YXNrGAEgASgLMgoudG9kby5UYXNrUgR0YXNrEjsKC3'
-    'VwZGF0ZV9tYXNrGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza1IKdXBkYXRlTWFz'
-    'aw==');
+    'ChFVcGRhdGVUYXNrUmVxdWVzdBIOCgJpZBgBIAEoBVICaWQSFAoFdGl0bGUYAiABKAlSBXRpdG'
+    'xlEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIhCgxpc19jb21wbGV0ZWQYBCAB'
+    'KAhSC2lzQ29tcGxldGVk');
 
 @$core.Deprecated('Use deleteTaskRequestDescriptor instead')
 const DeleteTaskRequest$json = {

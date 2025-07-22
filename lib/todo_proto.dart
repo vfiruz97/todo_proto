@@ -4,9 +4,11 @@
 /// for the Todo application.
 library;
 
+// Export Dart packages
+export 'package:grpc/grpc.dart';
+
 // Export Google protobuf standard types
 export 'src/generated/google/protobuf/empty.pb.dart';
-export 'src/generated/google/protobuf/field_mask.pb.dart';
 // Export generated protobuf messages
 export 'src/generated/protos/task.pb.dart';
 export 'src/generated/protos/task.pbenum.dart';
