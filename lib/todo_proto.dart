@@ -4,6 +4,7 @@
 /// for the Todo application.
 library;
 
+export 'package:fixnum/fixnum.dart';
 // Export Dart packages
 export 'package:grpc/grpc.dart';
 
