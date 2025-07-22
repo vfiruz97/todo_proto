@@ -38,9 +38,9 @@ message ListTasksResponse {
 
 // The Task service definition.
 service TaskService {
-    rpc CreateTask(CreateTaskRequest) returns (Task);
-    rpc GetTask(GetTaskRequest) returns (Task);
-    rpc ListTasks(google.protobuf.Empty) returns (ListTasksResponse);
-    rpc UpdateTask(UpdateTaskRequest) returns (Task);
-    rpc DeleteTask(DeleteTaskRequest) returns (google.protobuf.Empty);
+    rpc Create(CreateTaskRequest) returns (Task);
+    rpc GetById(GetTaskRequest) returns (Task);
+    rpc GetAll(google.protobuf.Empty) returns (ListTasksResponse);
+    rpc Update(UpdateTaskRequest) returns (Task);
+    rpc Delete(DeleteTaskRequest) returns (google.protobuf.Empty);
 }

@@ -34,64 +34,63 @@ class TaskServiceClient extends $grpc.Client {
 
   TaskServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$0.Task> createTask(
+  $grpc.ResponseFuture<$0.Task> create(
     $0.CreateTaskRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$createTask, request, options: options);
+    return $createUnaryCall(_$create, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Task> getTask(
+  $grpc.ResponseFuture<$0.Task> getById(
     $0.GetTaskRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$getTask, request, options: options);
+    return $createUnaryCall(_$getById, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ListTasksResponse> listTasks(
+  $grpc.ResponseFuture<$0.ListTasksResponse> getAll(
     $1.Empty request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$listTasks, request, options: options);
+    return $createUnaryCall(_$getAll, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Task> updateTask(
+  $grpc.ResponseFuture<$0.Task> update(
     $0.UpdateTaskRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$updateTask, request, options: options);
+    return $createUnaryCall(_$update, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Empty> deleteTask(
+  $grpc.ResponseFuture<$1.Empty> delete(
     $0.DeleteTaskRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$deleteTask, request, options: options);
+    return $createUnaryCall(_$delete, request, options: options);
   }
 
   // method descriptors
 
-  static final _$createTask = $grpc.ClientMethod<$0.CreateTaskRequest, $0.Task>(
-      '/todo.TaskService/CreateTask',
+  static final _$create = $grpc.ClientMethod<$0.CreateTaskRequest, $0.Task>(
+      '/todo.TaskService/Create',
       ($0.CreateTaskRequest value) => value.writeToBuffer(),
       $0.Task.fromBuffer);
-  static final _$getTask = $grpc.ClientMethod<$0.GetTaskRequest, $0.Task>(
-      '/todo.TaskService/GetTask',
+  static final _$getById = $grpc.ClientMethod<$0.GetTaskRequest, $0.Task>(
+      '/todo.TaskService/GetById',
       ($0.GetTaskRequest value) => value.writeToBuffer(),
       $0.Task.fromBuffer);
-  static final _$listTasks = $grpc.ClientMethod<$1.Empty, $0.ListTasksResponse>(
-      '/todo.TaskService/ListTasks',
+  static final _$getAll = $grpc.ClientMethod<$1.Empty, $0.ListTasksResponse>(
+      '/todo.TaskService/GetAll',
       ($1.Empty value) => value.writeToBuffer(),
       $0.ListTasksResponse.fromBuffer);
-  static final _$updateTask = $grpc.ClientMethod<$0.UpdateTaskRequest, $0.Task>(
-      '/todo.TaskService/UpdateTask',
+  static final _$update = $grpc.ClientMethod<$0.UpdateTaskRequest, $0.Task>(
+      '/todo.TaskService/Update',
       ($0.UpdateTaskRequest value) => value.writeToBuffer(),
       $0.Task.fromBuffer);
-  static final _$deleteTask =
-      $grpc.ClientMethod<$0.DeleteTaskRequest, $1.Empty>(
-          '/todo.TaskService/DeleteTask',
-          ($0.DeleteTaskRequest value) => value.writeToBuffer(),
-          $1.Empty.fromBuffer);
+  static final _$delete = $grpc.ClientMethod<$0.DeleteTaskRequest, $1.Empty>(
+      '/todo.TaskService/Delete',
+      ($0.DeleteTaskRequest value) => value.writeToBuffer(),
+      $1.Empty.fromBuffer);
 }
 
 @$pb.GrpcServiceName('todo.TaskService')
@@ -100,79 +99,79 @@ abstract class TaskServiceBase extends $grpc.Service {
 
   TaskServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.CreateTaskRequest, $0.Task>(
-        'CreateTask',
-        createTask_Pre,
+        'Create',
+        create_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.CreateTaskRequest.fromBuffer(value),
         ($0.Task value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetTaskRequest, $0.Task>(
-        'GetTask',
-        getTask_Pre,
+        'GetById',
+        getById_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.GetTaskRequest.fromBuffer(value),
         ($0.Task value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.Empty, $0.ListTasksResponse>(
-        'ListTasks',
-        listTasks_Pre,
+        'GetAll',
+        getAll_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
         ($0.ListTasksResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UpdateTaskRequest, $0.Task>(
-        'UpdateTask',
-        updateTask_Pre,
+        'Update',
+        update_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.UpdateTaskRequest.fromBuffer(value),
         ($0.Task value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DeleteTaskRequest, $1.Empty>(
-        'DeleteTask',
-        deleteTask_Pre,
+        'Delete',
+        delete_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.DeleteTaskRequest.fromBuffer(value),
         ($1.Empty value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Task> createTask_Pre($grpc.ServiceCall $call,
+  $async.Future<$0.Task> create_Pre($grpc.ServiceCall $call,
       $async.Future<$0.CreateTaskRequest> $request) async {
-    return createTask($call, await $request);
+    return create($call, await $request);
   }
 
-  $async.Future<$0.Task> createTask(
+  $async.Future<$0.Task> create(
       $grpc.ServiceCall call, $0.CreateTaskRequest request);
 
-  $async.Future<$0.Task> getTask_Pre($grpc.ServiceCall $call,
+  $async.Future<$0.Task> getById_Pre($grpc.ServiceCall $call,
       $async.Future<$0.GetTaskRequest> $request) async {
-    return getTask($call, await $request);
+    return getById($call, await $request);
   }
 
-  $async.Future<$0.Task> getTask(
+  $async.Future<$0.Task> getById(
       $grpc.ServiceCall call, $0.GetTaskRequest request);
 
-  $async.Future<$0.ListTasksResponse> listTasks_Pre(
+  $async.Future<$0.ListTasksResponse> getAll_Pre(
       $grpc.ServiceCall $call, $async.Future<$1.Empty> $request) async {
-    return listTasks($call, await $request);
+    return getAll($call, await $request);
   }
 
-  $async.Future<$0.ListTasksResponse> listTasks(
+  $async.Future<$0.ListTasksResponse> getAll(
       $grpc.ServiceCall call, $1.Empty request);
 
-  $async.Future<$0.Task> updateTask_Pre($grpc.ServiceCall $call,
+  $async.Future<$0.Task> update_Pre($grpc.ServiceCall $call,
       $async.Future<$0.UpdateTaskRequest> $request) async {
-    return updateTask($call, await $request);
+    return update($call, await $request);
   }
 
-  $async.Future<$0.Task> updateTask(
+  $async.Future<$0.Task> update(
       $grpc.ServiceCall call, $0.UpdateTaskRequest request);
 
-  $async.Future<$1.Empty> deleteTask_Pre($grpc.ServiceCall $call,
+  $async.Future<$1.Empty> delete_Pre($grpc.ServiceCall $call,
       $async.Future<$0.DeleteTaskRequest> $request) async {
-    return deleteTask($call, await $request);
+    return delete($call, await $request);
   }
 
-  $async.Future<$1.Empty> deleteTask(
+  $async.Future<$1.Empty> delete(
       $grpc.ServiceCall call, $0.DeleteTaskRequest request);
 }
