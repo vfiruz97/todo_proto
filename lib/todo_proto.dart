@@ -4,8 +4,8 @@
 /// for the Todo application.
 library;
 
-export 'package:fixnum/fixnum.dart';
 // Export Dart packages
+export 'package:fixnum/fixnum.dart';
 export 'package:grpc/grpc.dart';
 
 // Export Google protobuf standard types
