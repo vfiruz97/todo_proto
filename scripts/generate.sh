@@ -20,10 +20,10 @@ if ! command -v protoc-gen-dart &> /dev/null; then
 fi
 
 # Load environment variables from .env file
-if [ -f "../.env" ]; then
+if [ -f ".env" ]; then
     echo "Loading environment variables from .env file..."
     set -a
-    source ../.env
+    source .env
     set +a
 fi
 
@@ -49,7 +49,7 @@ protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --dart_out=lib/src/generated "$PROTO
 # Add any other standard types you need here
 
 echo "Generating Dart files..."
-protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --proto_path=. --dart_out=grpc:lib/src/generated protos/task.proto
+protoc --proto_path="$PROTOBUF_INCLUDE_DIR" --proto_path=. --dart_out=grpc:lib/src/generated protos/todo.proto
 
 echo "Code generation completed successfully in: lib/src/generated/protos/"
 

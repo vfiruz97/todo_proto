@@ -4,7 +4,7 @@ package todo;
 
 import "google/protobuf/empty.proto";
 
-message Task {
+message Todo {
     int32 id = 1;
     string title = 2;
     string description = 3;
@@ -13,28 +13,28 @@ message Task {
     int64 updated_at = 6;  // timestamp in milliseconds since epoch.
 }
 
-message CreateTaskRequest {
+message CreateTodoRequest {
     string title = 1;
     string description = 2;
 }
 
-message GetTaskRequest {
+message GetTodoRequest {
     int32 id = 1;
 }
 
-message UpdateTaskRequest {
+message UpdateTodoRequest {
     int32 id = 1;
     string title = 2;
     string description = 3;
     bool is_completed = 4;
 }
 
-message DeleteTaskRequest {
+message DeleteTodoRequest {
     int32 id = 1;
 }
 
-message ListTasksResponse {
-    repeated Task tasks = 1;
+message ListTodosResponse {
+    repeated Todo todos = 1;
 }
 
 message ErrorResponse {
@@ -42,11 +42,11 @@ message ErrorResponse {
   int32 code = 2;
 }
 
-// The Task service definition.
-service TaskService {
-    rpc Create(CreateTaskRequest) returns (Task);
-    rpc GetById(GetTaskRequest) returns (Task);
-    rpc GetAll(google.protobuf.Empty) returns (ListTasksResponse);
-    rpc Update(UpdateTaskRequest) returns (Task);
-    rpc Delete(DeleteTaskRequest) returns (google.protobuf.Empty);
+// The Todo service definition.
+service TodoService {
+    rpc Create(CreateTodoRequest) returns (Todo);
+    rpc GetById(GetTodoRequest) returns (Todo);
+    rpc GetAll(google.protobuf.Empty) returns (ListTodosResponse);
+    rpc Update(UpdateTodoRequest) returns (Todo);
+    rpc Delete(DeleteTodoRequest) returns (google.protobuf.Empty);
 }
